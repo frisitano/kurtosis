@@ -298,8 +298,8 @@ func TestBuildDeviceRequestsForAllGpus(t *testing.T) {
 func TestFilterNetworksByExactName(t *testing.T) {
 	// Docker's name filter returns these for 'bridge' on a Docker Swarm node
 	dockerNetworks := []network.Inspect{
-		{ID: "a0b36d104fd2", Name: "bridge"},
-		{ID: "991089c092a0", Name: "docker_gwbridge"},
+		{ID: "a0b36d104fd2", Name: "bridge"},          //nolint:exhaustruct
+		{ID: "991089c092a0", Name: "docker_gwbridge"}, //nolint:exhaustruct
 	}
 
 	matchingNetworks := filterNetworksByExactName(dockerNetworks, "bridge")
